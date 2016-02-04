@@ -10,16 +10,17 @@
         var current = 0;
         var _isNumber = !isNaN(content);
         content = _isNumber ? +content : content;
+        var delay = !window.msIndexedDB ? 5 : 50; //IE's minimum setTimeout interval in practice appears to be ~50
 
         var target = _isNumber ? +content : content.length;
-        var rate = (5 / (duration || 600)) * target;
+        var rate = (delay / (duration || 600)) * target;
 
         var _animateText = function () {
             current += rate;
             if (current < target) {
                 var normalizedCurrent = Math.round(current);
                 $el.text(_isNumber ? normalizedCurrent : content.substring(0, normalizedCurrent));
-                window.setTimeout(_animateText, 5);
+                window.setTimeout(_animateText, delay);
             } else {
                 $el.text(content);
             }
