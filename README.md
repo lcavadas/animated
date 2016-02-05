@@ -1,3 +1,5 @@
-# animatedText
+# animated
 
-jQuery plugin to animate text being set into elements
+jQuery plugin to animate elements:
+  - text being set into elements
+  - css transitions using easing functions

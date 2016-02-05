@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <script type="text/javascript" src="//cdn.rawgit.com/lcavadas/easing/1.0.0/easing.min.js"></script>
+  <script type="text/javascript" src="//cdn.rawgit.com/jquery/jquery/2.1.3/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.animated.js"></script>
+  <!--<link rel="stylesheet" href="scroll2.min.css"/>-->
+</head>
+<body>
+<div class="target-container">
+  <div class="targetNumber"></div>
+  <br/>
+  <div class="targetText" style="height: 5em;"></div>
+  <br/>
+  <div class="targetNumberGenie" style="height: 2em;"></div>
+  <br/>
+  <div class="targetTextGenie" style="height: 5em;"></div>
+</div>
+</body>
+</html>
+<script>
+  $(document).ready(function () {
+    $('.targetText').animatedText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+    $('.targetNumber').animatedText(525);
+
+    $('.targetTextGenie').animatedText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", {
+      easing: 'linear',
+      animation: {
+        changes: [
+          {
+            easing: 'easeOutCubic',
+            prop: 'font-size',
+            from: 0,
+            variation: 1,
+            unit: 'em',
+            duration: 200
+          },
+          {
+            prop: 'opacity',
+            from: 0,
+            variation: 1,
+            duration: 30
+          }
+        ]
+      },
+      duration:1000
+    });
+
+    $('.targetNumberGenie').animatedText(525, {
+      easing: 'linear',
+      animation: {
+        changes: [
+          {
+            easing: 'easeOutCubic',
+            prop: 'font-size',
+            from: 0,
+            variation: 1,
+            unit: 'em'
+          },
+          {
+            prop: 'opacity',
+            from: 0,
+            variation: 1
+          }
+        ]
+      }
+    });
+  });
+</script>
